@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+  <title>Edit</title>
+</head>
+<body>
+<h1>Edit user</h1>
+<form th:object="${user}" th:action="@{/admin/edit/{id}(id=${user.getId()})}" th:method="POST">
+  <p>FirstName: <input type="text" th:field="*{username}" th:value="*{username}"></p>
+  <p>LastName: <input type="text" th:field="*{lastname}" th:value="*{lastname}"></p>
+  <p>Age: <input type="number" th:field="*{age}" th:value="*{age}"></p>
+  <p>Email: <input type="text" th:field="*{email}" th:value="*{email}"></p>
+<!--  <p>Role<input type="text" th:field="*{role}" th:value="*{role}"></p>-->
+  <p>Password: <input type="text" th:field="*{password}" th:value="*{password}"></p>
+  <p><input type="submit" value="Edit"></p>
+</form>
+</body>
+</html>
+
